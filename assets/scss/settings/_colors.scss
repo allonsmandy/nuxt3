@@ -1,0 +1,17 @@
+:root {
+  $colors: (
+    'cotton': #ffffff,
+    'aqua': #3486E6,
+    'nevada--1': #EEEEEE,
+    'nevada--2': #746A6A,
+    'default':  #363636
+  );
+
+  /*
+  * Usage:
+  *   var(--aqua);
+  */
+  @each $key_name, $value in $colors {
+    --#{$key_name}: #{$value};
+  }
+}
