@@ -1,29 +1,31 @@
+<script setup>
+import { useCart } from '../../../store/cart'
+defineProps({
+  game: {
+    type: [Object],
+  },
+})
+
+const cart = useCart()
+</script>
+
 <template>
   <article class="cart-game">
     <span class="cart-game__quantity">{{ cart.quantity[game.id] }}</span>
     <atoms-card class="cart-game__card">
-      <img :src="`/${game.image}`" />
+      <img :src="`/${game.image}`">
     </atoms-card>
     <div class="cart-game__item">
       <div class="cart-game__item__info">
         <atoms-name>{{ game.name }}</atoms-name>
         <atoms-price>{{ game.price }}</atoms-price>
       </div>
-      <atoms-button @click="cart.remove(game)">x</atoms-button>
+      <atoms-button @click="cart.remove(game)">
+        x
+      </atoms-button>
     </div>
   </article>
 </template>
-
-<script setup>
-import { useCart } from "../../../store/cart";
-const cart = useCart();
-
-defineProps({
-  game: {
-    type: [Object],
-  },
-});
-</script>
 
 <style lang="scss" scoped>
 .cart-game {

@@ -1,3 +1,10 @@
+<script setup>
+import { useGames } from './store/games'
+const games = useGames()
+
+games.fetchGames()
+</script>
+
 <template>
   <main>
     <section class="wrapper">
@@ -7,13 +14,6 @@
     <templates-the-cart />
   </main>
 </template>
-
-<script setup>
-import { useGames } from "./store/games";
-const games = useGames();
-
-games.fetchGames();
-</script>
 
 <style>
 main {

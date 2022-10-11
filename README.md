@@ -1,42 +1,28 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+Esta aplicação utiliza o Nuxt3. A renderização é feita do lado do servidor, e para gerenciamento global é utilizado o Pinia.
 
-## Setup
+## Inicializando...
 
-Make sure to install the dependencies:
+Instale as dependências:
 
 ```bash
-# yarn
 yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
 ```
 
-## Development Server
-
-Start the development server on http://localhost:3000
+Inicie o servidor de desenvolvimento:
 
 ```bash
-npm run dev
+yarn dev
 ```
 
-## Production
+Acesse http://localhost:3000!
 
-Build the application for production:
+Para rodar os testes da aplicação foi utilizado o Cypress. Execute o seguinte comando para visualizar melhor:
 
 ```bash
-npm run build
+yarn cypress:open
 ```
 
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+Para organizar os estilos CSS, foi utilizado o pré-processador SASS juntamente com a metodologia BEM e a arquitetura ITCSS.
+Os componentes utilizam o conceito de Atomic Design, e o lint utilizado foi o recomendado pelo antfu, criador do vitest.

@@ -1,15 +1,15 @@
+<script setup>
+import { useGames } from '../../store/games'
+const games = useGames()
+</script>
+
 <template>
   <ul class="store">
-    <li class="store__game" v-for="(item, index) in games.list" :key="index">
+    <li v-for="(item, index) in games.list" :key="index" class="store__game">
       <molecules-store-game :game="item" />
     </li>
   </ul>
 </template>
-
-<script setup>
-import { useGames } from "../../store/games";
-const games = useGames();
-</script>
 
 <style lang="scss">
 .store {

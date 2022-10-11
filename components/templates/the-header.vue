@@ -1,6 +1,8 @@
 <template>
   <header class="header">
-    <h1 class="header__title">Games</h1>
+    <h1 class="header__title">
+      Games
+    </h1>
     <atoms-search />
   </header>
 </template>

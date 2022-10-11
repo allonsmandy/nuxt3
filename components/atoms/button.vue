@@ -1,22 +1,22 @@
+<script setup>
+const props = defineProps({
+  typeButton: {
+    type: String,
+    default: 'button',
+    validator: type => ['link', 'button'].includes(type),
+  },
+})
+
+const getStyle = computed(() => {
+  return String(props.typeButton)
+})
+</script>
+
 <template>
   <button :class="getStyle">
     <slot />
   </button>
 </template>
-
-<script setup>
-const props = defineProps({
-  typeButton: {
-    type: String,
-    default: "button",
-    validator: (type) => ["link", "button"].includes(type),
-  },
-});
-
-const getStyle = computed(() => {
-  return String(props.typeButton);
-});
-</script>
 
 <style lang="scss">
 button {

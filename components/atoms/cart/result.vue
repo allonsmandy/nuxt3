@@ -1,15 +1,3 @@
-<template>
-  <div class="info">
-    <span class="info__title" data-cy="result-title">{{ title }}</span>
-    <strong
-      class="info__description"
-      data-cy="result-description"
-      :class="{ 'info__description--medium': size === 'medium' }"
-      >{{ description }}</strong
-    >
-  </div>
-</template>
-
 <script setup>
 defineProps({
   title: {
@@ -23,8 +11,19 @@ defineProps({
   size: {
     type: String,
   },
-});
+})
 </script>
+
+<template>
+  <div class="info">
+    <span class="info__title" data-cy="result-title">{{ title }}</span>
+    <strong
+      class="info__description"
+      data-cy="result-description"
+      :class="{ 'info__description--medium': size === 'medium' }"
+    >{{ description }}</strong>
+  </div>
+</template>
 
 <style lang="scss">
 .info {

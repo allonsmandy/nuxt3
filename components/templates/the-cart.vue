@@ -1,3 +1,12 @@
+<script setup>
+import { useCart } from '../../store/cart'
+const cart = useCart()
+
+const formatNumber = (price) => {
+  return Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(price)
+}
+</script>
+
 <template>
   <aside class="cart">
     <div class="cart__title">
@@ -5,8 +14,8 @@
       <span>({{ cart.list.length }} itens)</span>
     </div>
 
-    <div class="cart__empty" v-if="!cart.list.length">
-      <img src="~/assets/images/cart-icon.svg" alt="" />
+    <div v-if="!cart.list.length" class="cart__empty">
+      <img src="~/assets/images/cart-icon.svg" alt="">
       <p>Até o momento, o seu carrinho está vazio</p>
     </div>
 
@@ -28,15 +37,6 @@
     </template>
   </aside>
 </template>
-
-<script setup>
-import { useCart } from "../../store/cart";
-const cart = useCart();
-
-const formatNumber = (price) => {
-  return Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(price);
-};
-</script>
 
 <style lang="scss" scoped>
 .cart {
